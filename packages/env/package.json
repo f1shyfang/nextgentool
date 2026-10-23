@@ -1,0 +1,25 @@
+{
+  "name": "@repo/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./server": "./src/server.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm --filter @repo/web exec vitest run --root ../../packages/env --config ../../apps/web/vitest.config.ts"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.10",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.4"
+  }
+}
