@@ -1,0 +1,707 @@
+.research-setup {
+  max-width: 44rem;
+  margin: 12vh auto;
+  padding: 2rem;
+  line-height: 1.65;
+}
+.research-setup h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.research-setup a {
+  color: #147d74;
+}
+.research-setup button {
+  padding: 0.75rem 1.25rem;
+  background: #147d74;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.research-account {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 20;
+}
+
+.research-app {
+  --research-ink: #17313b;
+  --research-teal: #147d74;
+  --research-muted: #607178;
+  --research-line: #dce3df;
+  color: var(--research-ink);
+  background: #fafaf6;
+  min-height: 100vh;
+  padding: 40px clamp(20px, 4vw, 64px) 64px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.research-app * {
+  box-sizing: border-box;
+}
+.research-app h1,
+.research-app h2,
+.research-app h3,
+.research-app h4,
+.research-app p {
+  margin: 0 0 14px;
+}
+.research-app h1 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.research-app h2 {
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+.research-app h3 {
+  font-size: 17px;
+  margin-top: 26px;
+}
+.research-app button,
+.research-app input,
+.research-app select,
+.research-app textarea {
+  font: inherit;
+}
+.research-app button,
+.research-app input,
+.research-app select,
+.research-app textarea {
+  border: 1px solid #bac9c3;
+  border-radius: 5px;
+  background: white;
+  color: var(--research-ink);
+}
+.research-app button {
+  padding: 9px 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.research-app button:hover:not(:disabled) {
+  background: #edf4f1;
+  border-color: var(--research-teal);
+}
+.research-app button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.research-app a {
+  color: var(--research-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.research-app :focus-visible {
+  outline: 3px solid #6bbbae;
+  outline-offset: 3px;
+}
+.research-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.research-app input,
+.research-app select,
+.research-app textarea {
+  padding: 10px 12px;
+  font-size: 14px;
+  width: 100%;
+  min-width: 0;
+}
+.research-app textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+.research-app .research-primary {
+  background: var(--research-teal);
+  color: white;
+  border-color: var(--research-teal);
+}
+.research-app .research-primary:hover:not(:disabled) {
+  background: #0c665f;
+  color: white;
+}
+.research-app .research-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.research-app .research-heading p {
+  color: var(--research-muted);
+  font-size: 15px;
+  margin: 10px 0 0;
+}
+.research-app .research-role {
+  border: 1px solid var(--research-line);
+  border-radius: 20px;
+  padding: 5px 12px;
+  text-transform: capitalize;
+  background: #f0f4ef;
+  font-size: 12px;
+}
+.research-app .research-scope {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  border-bottom: 1px solid var(--research-line);
+  padding-bottom: 25px;
+}
+.research-app .research-scope label {
+  width: 230px;
+}
+.research-app .research-scope p {
+  max-width: 320px;
+  color: var(--research-muted);
+  font-size: 12px;
+  margin: 0 0 5px auto;
+}
+.research-app .research-tabs {
+  display: flex;
+  gap: 28px;
+  border-bottom: 1px solid var(--research-line);
+  margin: 22px 0;
+}
+.research-app .research-tabs button {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  padding: 12px 0;
+  color: var(--research-muted);
+  font-size: 15px;
+}
+.research-app .research-tabs button[aria-selected="true"] {
+  border-bottom-color: var(--research-teal);
+  color: var(--research-teal);
+}
+.research-app .research-tabs span {
+  font-size: 11px;
+  margin-left: 8px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #e9eeea;
+}
+.research-app .research-toolbar {
+  display: flex;
+  align-items: end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.research-app .research-toolbar .research-search {
+  flex: 1;
+  min-width: 180px;
+}
+.research-app
+  .research-toolbar
+  > label:not(.research-search):not(.research-check) {
+  width: 175px;
+}
+.research-app .research-toolbar .research-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.research-app .research-check input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--research-teal);
+}
+.research-app .research-status {
+  display: flex;
+  gap: 15px;
+  min-height: 32px;
+  padding: 7px 0;
+  color: var(--research-teal);
+  font-size: 12px;
+}
+.research-app .research-status span {
+  color: #8a5c19;
+}
+.research-app .research-error {
+  border: 1px solid #d99d92;
+  padding: 10px 14px;
+  background: #fff0ec;
+  color: #8b352a;
+}
+.research-app .research-columns {
+  display: grid;
+  grid-template-columns: minmax(260px, 34%) minmax(0, 1fr);
+  border: 1px solid var(--research-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  min-height: 520px;
+}
+.research-app .research-list {
+  border-right: 1px solid var(--research-line);
+  background: #fcfcf9;
+}
+.research-app .research-count {
+  font-size: 11px;
+  color: var(--research-muted);
+  padding: 15px 20px 10px;
+  margin: 0;
+}
+.research-app .research-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--research-line);
+  background: transparent;
+  width: 100%;
+  padding: 19px 20px;
+  font-weight: 400;
+  position: relative;
+}
+.research-app .research-item strong {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+.research-app .research-item span {
+  font-size: 12px;
+}
+.research-app .research-item small {
+  color: var(--research-muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.research-app .research-item.is-selected {
+  background: #edf5f0;
+  box-shadow: inset 3px 0 var(--research-teal);
+}
+.research-app .research-detail {
+  padding: 28px clamp(18px, 3vw, 40px);
+  min-width: 0;
+}
+.research-app .research-detail-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+}
+.research-app .research-detail-heading h2 {
+  overflow-wrap: anywhere;
+}
+.research-app .research-detail-heading > span {
+  font-size: 11px;
+  color: var(--research-muted);
+  white-space: nowrap;
+}
+.research-app .research-muted {
+  color: var(--research-muted);
+  font-size: 12px;
+}
+.research-app .research-prose {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.research-app .research-empty {
+  padding: 35px 22px;
+  color: var(--research-muted);
+}
+.research-app .research-empty h2 {
+  font-size: 18px;
+  color: var(--research-ink);
+}
+.research-app .research-detail-empty {
+  padding-top: 100px;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+.research-app .research-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.research-app .research-form p {
+  margin-bottom: 0;
+}
+.research-app .research-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.research-app .research-field-row {
+  display: flex;
+  gap: 15px;
+}
+.research-app .research-field-row > * {
+  flex: 1;
+  min-width: 0;
+}
+.research-app .research-body {
+  min-height: 260px;
+}
+.research-app .research-form h3 {
+  margin-bottom: 0;
+}
+.research-app .research-incomplete {
+  float: right;
+  color: #9c6c25;
+  font-weight: 400;
+  font-size: 11px;
+}
+.research-app .research-completeness {
+  padding: 10px 12px;
+  background: #f1f4ee;
+  font-size: 12px;
+}
+.research-app .research-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.research-app .research-save {
+  position: sticky;
+  bottom: 10px;
+  padding: 14px 0;
+  background: #fff;
+  border-top: 1px solid var(--research-line);
+  z-index: 1;
+}
+.research-app .research-save span {
+  font-size: 11px;
+  color: var(--research-muted);
+}
+.research-app .research-inset {
+  padding: 18px;
+  background: #f8faf6;
+  border: 1px solid var(--research-line);
+  margin: 20px 0;
+}
+.research-app .research-history-label {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--research-line);
+  margin-bottom: 22px;
+}
+.research-app .research-history h3 {
+  border-top: 1px solid var(--research-line);
+  padding-top: 18px;
+}
+.research-app .research-versions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.research-app .research-versions li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--research-line);
+}
+.research-app .research-versions li > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: start;
+}
+.research-app .research-versions strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.research-app .research-versions small {
+  font-size: 11px;
+  color: var(--research-muted);
+  display: block;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+.research-app .research-versions p {
+  font-size: 12px;
+  margin: 8px 0;
+}
+.research-app .research-state {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: max-content;
+  max-width: 100%;
+  border-radius: 4px;
+  padding: 3px 7px;
+  background: #f3eddc;
+  color: #806217;
+}
+.research-app .research-state.state-ready {
+  background: #e5f1e8;
+  color: #226e4f;
+}
+.research-state.state-failed,
+.research-app .research-state.state-rejected {
+  background: #fbece7;
+  color: #9b4032;
+}
+.research-app .research-evidence {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.research-app .research-evidence li {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  font-size: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--research-line);
+  overflow-wrap: anywhere;
+}
+.research-app .research-evidence li > span {
+  min-width: 0;
+}
+.research-app .research-evidence small {
+  display: block;
+  color: var(--research-muted);
+  margin-top: 5px;
+}
+.research-app .research-link {
+  color: var(--research-teal);
+  text-decoration: underline;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+}
+.research-app .research-conflict {
+  background: #fffbeb;
+  border: 1px solid #d8ba64;
+  padding: 18px;
+  margin-top: 22px;
+}
+.research-app .research-conflict h3 {
+  margin-top: 0;
+}
+.research-app .research-conflict details {
+  max-height: 400px;
+  overflow: auto;
+  margin-bottom: 12px;
+}
+.research-app .research-conflict summary {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 12px 0;
+}
+.research-app .research-conflict p {
+  font-size: 12px;
+}
+.research-app .research-archive {
+  margin-top: 35px;
+  border-top: 1px solid var(--research-line);
+  padding-top: 18px;
+}
+.research-app .research-archive button {
+  font-size: 12px;
+  color: #8e4839;
+}
+.research-app .research-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #17313b88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  z-index: 20;
+}
+.research-app .research-modal {
+  border: none;
+  color: var(--research-ink);
+  background: #fffefa;
+  border-radius: 8px;
+  padding: 30px;
+  width: 680px;
+  max-width: 100%;
+  max-height: 85vh;
+  overflow: auto;
+  box-shadow: 0 18px 90px #071e3c30;
+}
+.research-app .research-modal > button {
+  float: right;
+  margin: 0 0 15px 15px;
+}
+.research-app .research-evidence li > button {
+  padding: 4px 7px;
+  font-size: 11px;
+}
+.research-app .research-modal h2 {
+  margin-top: 12px;
+}
+.research-app .research-modal-backdrop ~ * {
+  pointer-events: none;
+}
+@media (max-width: 1050px) {
+  .research-app .research-scope p {
+    display: none;
+  }
+  .research-app .research-toolbar {
+    gap: 10px;
+  }
+  .research-app .research-toolbar .research-search {
+    min-width: 220px;
+  }
+  .research-app
+    .research-toolbar
+    > label:not(.research-search):not(.research-check) {
+    width: 150px;
+  }
+  .research-app .research-columns {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+  .research-app .research-versions li > div {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+@media (max-width: 760px) {
+  .research-app {
+    padding: 24px 16px;
+  }
+  .research-app .research-heading {
+    margin-bottom: 25px;
+  }
+  .research-app .research-heading h1 {
+    font-size: 26px;
+  }
+  .research-app .research-heading p {
+    font-size: 13px;
+  }
+  .research-app .research-scope {
+    gap: 12px;
+  }
+  .research-app .research-scope label {
+    width: 50%;
+    min-width: 0;
+  }
+  .research-app .research-tabs {
+    gap: 22px;
+  }
+  .research-app .research-tabs button {
+    font-size: 13px;
+  }
+  .research-app .research-toolbar .research-search {
+    flex-basis: 100%;
+  }
+  .research-app
+    .research-toolbar
+    > label:not(.research-search):not(.research-check) {
+    width: calc(50% - 5px);
+  }
+  .research-app .research-toolbar > button {
+    margin-left: auto;
+  }
+  .research-app .research-columns {
+    display: block;
+  }
+  .research-app .research-list {
+    max-height: 320px;
+    overflow: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--research-line);
+  }
+  .research-app .research-item {
+    padding: 14px 18px;
+  }
+  .research-app .research-detail {
+    padding: 24px 18px;
+  }
+  .research-app .research-detail-empty {
+    padding-top: 35px;
+  }
+  .research-app .research-field-row {
+    flex-direction: column;
+  }
+  .research-app .research-detail-heading {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .research-app .research-modal-backdrop {
+    padding: 12px;
+  }
+  .research-app .research-modal {
+    border: none;
+    color: var(--research-ink);
+    padding: 20px;
+  }
+  .research-app .research-tabs span {
+    margin-left: 4px;
+  }
+}
+
+.research-app .research-modal::backdrop {
+  background: #17313b88;
+}
+
+.research-app .research-markdown {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.75;
+  white-space: normal;
+}
+.research-app .research-markdown h1 {
+  font-size: 23px;
+  margin: 20px 0 12px;
+}
+.research-app .research-markdown h2 {
+  font-size: 20px;
+  margin: 18px 0 10px;
+}
+.research-app .research-markdown h3 {
+  font-size: 17px;
+  margin: 16px 0 8px;
+}
+.research-app .research-markdown ul,
+.research-app .research-markdown ol {
+  padding-left: 24px;
+}
+.research-app .research-markdown pre {
+  white-space: pre-wrap;
+  background: #f1f4ee;
+  padding: 12px;
+  overflow: auto;
+}
+.research-app .research-markdown blockquote {
+  border-left: 3px solid #b7ccc2;
+  padding-left: 14px;
+  margin-left: 0;
+  color: var(--research-muted);
+}
+.research-app .research-preview {
+  padding: 14px;
+  background: #f7f9f4;
+  border: 1px solid var(--research-line);
+}
+.research-app .research-preview summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+}
+.research-app .research-preview[open] summary {
+  margin-bottom: 20px;
+}
+
+.research-app .research-prose a {
+  overflow-wrap: anywhere;
+}

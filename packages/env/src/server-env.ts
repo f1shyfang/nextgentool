@@ -11,6 +11,9 @@ function usesVerifiedRemoteTls(databaseUrl: string) {
 
 export const serverEnvSchema = {
   CLERK_SECRET_KEY: z.string().optional(),
+  RESEARCH_STORAGE_PATH: z.string().default(".research-private"),
+  CLAMAV_HOST: z.string().default("127.0.0.1"),
+  CLAMAV_PORT: z.coerce.number().int().min(1).max(65535).default(3310),
   TEST_DATABASE_URL: z.url({ protocol: /^postgres(?:ql)?$/ }).optional(),
   DATABASE_URL: z
     .url({ protocol: /^postgres(?:ql)?$/ })
@@ -19,6 +22,6 @@ export const serverEnvSchema = {
     }),
 };
 
-export function loadServerEnv(runtimeEnv: { DATABASE_URL?: string }) {
+export function loadServerEnv(runtimeEnv: Record<string, string | undefined>) {
   return z.object(serverEnvSchema).parse(runtimeEnv);
 }

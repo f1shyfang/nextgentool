@@ -16,3 +16,8 @@ output/pdf/NextGen-Ventures-Brand-Kit/
 
 playwright-report/
 test-results/
+
+.next-research-verification/
+.research-private/
+playwright-report/
+test-results/

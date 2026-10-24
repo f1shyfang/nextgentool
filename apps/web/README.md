@@ -46,3 +46,7 @@ The verifier checks every public route, linked assets, internal links, and signe
 The website reproduces nextgenventures.com.au as captured on 24 October 2026. The original Framer runtime, tracking scripts and editor tooling are absent; navigation and marquees are local React/CSS. External enquiry and newsletter links retain their original destinations.
 
 `scripts/import-reference.mjs` and `scripts/inspect-reference.mjs` preserve the original import tooling. Their initial `/tmp` captures are historical inputs, not required for builds. The brand-kit generator now reads this app's assets.
+
+## Research & Diligence
+
+`/research/` uses the existing Clerk identity and firm-scoped authorization for private PDF/DOCX documents, versioned notes and memo drafts. Configure `RESEARCH_STORAGE_PATH`, `CLAMAV_HOST`, and `CLAMAV_PORT`; files remain inaccessible until validation and malware scanning succeed. [Operations and provisioning](../../docs/plans/research-and-diligence-operations.md) cover memberships, canonical references and private storage reconciliation. [End-to-end verification](../../docs/plans/research-and-diligence-local-verification.md) records signed-in browser, upload, authorization and navigation-cancel results.
