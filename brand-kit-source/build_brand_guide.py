@@ -16,7 +16,7 @@ from svglib.svglib import svg2rlg
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = ROOT / 'nextgen-replica'
+SITE = ROOT / 'apps' / 'web'
 OUT = ROOT / 'output/pdf'
 KIT = OUT / 'NextGen-Ventures-Brand-Kit'
 TMP = ROOT / 'tmp/pdfs/nextgen-brand'
@@ -69,7 +69,7 @@ css+='  --ng-font-display: "Space Grotesk", sans-serif;\n  --ng-font-title: "Urb
 (KIT/'tokens/brand-tokens.css').write_text(css)
 provenance=json.loads((SITE/'public/assets/provenance.json').read_text())
 font_sources=[a for a in provenance['assets'] if any(s in a['local'] for s in ['98a0d4','faa908','5afd609','cd48ba'])]
-(KIT/'references/sources.json').write_text(json.dumps({'website':'https://www.nextgenventures.com.au/','date':'2026-10-24','basis':['nextgen-replica/DESIGN.md','nextgen-replica/app/globals.css','nextgen-replica/public/styles/home.css'],'fontSources':font_sources,'logoVariants':'White original-derived lockup; navy and symbol-only variants are kit derivatives.','recommendations':'Clear space, minimum width, copy guidance, and accessibility pairings are recommendations, not an official company standard.'},indent=2)+'\n')
+(KIT/'references/sources.json').write_text(json.dumps({'website':'https://www.nextgenventures.com.au/','date':'2026-10-24','basis':['apps/web/DESIGN.md','apps/web/src/app/(site)/site.css','apps/web/public/styles/home.css'],'fontSources':font_sources,'logoVariants':'White original-derived lockup; navy and symbol-only variants are kit derivatives.','recommendations':'Clear space, minimum width, copy guidance, and accessibility pairings are recommendations, not an official company standard.'},indent=2)+'\n')
 shutil.copy2(SITE/'DESIGN.md',KIT/'references/website-design-system.md')
 
 PDF=OUT/'NextGen-Ventures-Brand-Guidelines.pdf'

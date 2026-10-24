@@ -7,12 +7,19 @@
       "navy": { "role": "neutral", "displayName": "Page navy" },
       "header-action": { "role": "primary", "displayName": "Header action blue" },
       "source-action": { "role": "primary", "displayName": "Imported action blue" },
-      "source-accent": { "role": "primary", "displayName": "Source accent blue" }
+      "source-accent": { "role": "primary", "displayName": "Source accent blue" },
+      "portal-secondary-text": {"role": "secondary", "displayName": "Portal supporting text"},
+      "portal-footer-text": {"role": "secondary", "displayName": "Portal footer text"},
+      "portal-divider": {"role": "neutral", "displayName": "Portal row divider"},
+      "portal-link": {"role": "secondary", "displayName": "Portal action blue"},
+      "signup-border": {"role": "neutral", "displayName": "Sign-up outline"}
     },
     "typographyMeta": {
       "display": { "displayName": "Space Grotesk display", "purpose": "Hero heading; tablet 32px, mobile 26px." },
       "title": { "displayName": "Urbanist section title", "purpose": "Section headings; source responsive rules use 24px and 19px." },
-      "body": { "displayName": "Inter body", "purpose": "Imported paragraphs; 14px below desktop." }
+      "body": { "displayName": "Inter body", "purpose": "Imported paragraphs; 14px below desktop." },
+      "portal-display": {"displayName": "Account display", "purpose": "Auth introduction and dashboard welcome; auth headings use 36px on mobile."},
+      "portal-body": {"displayName": "Account body", "purpose": "Urbanist dashboard descriptions and account support copy; auth introductions use 19px and 17px on mobile."}
     },
     "motion": [
       { "name": "navigation-state", "value": "color .18s ease, background-color .18s ease", "purpose": "Header link and action hover transitions." },
@@ -29,7 +36,7 @@
     "provenance": {
       "authority": "https://www.nextgenventures.com.au/",
       "mode": "scan",
-      "sources": ["app/globals.css", "public/styles/home.css", "content/home.html", "components/Header.jsx", "components/ReferencePage.jsx"],
+      "sources": ["src/app/(site)/site.css", "public/styles/home.css", "content/home.html", "src/components/site/Header.jsx", "src/components/site/ReferencePage.jsx", "src/components/site/AuthShell.jsx", "src/app/(site)/sign-in/[[...sign-in]]/page.jsx", "src/app/(site)/sign-up/[[...sign-up]]/page.jsx", "src/app/(site)/dashboard/page.jsx"],
       "note": "Documented existing source values. No synthesized tonal ramps or replacement identity. Primitive tokens live exclusively in DESIGN.md frontmatter."
     }
   },
@@ -71,6 +78,13 @@
       "description": "Original homepage gradient shell; insert original illustration and copy, preserving their source layout.",
       "html": "<div class=\"ds-feature-card\" aria-label=\"Feature card surface\"></div>",
       "css": ".ds-feature-card{display:flex;flex-direction:column;justify-content:space-between;align-items:center;height:400px;padding:20px;border-radius:12px;overflow:clip;background:linear-gradient(180deg,var(--token-899bc5d2-841e-4e35-a0f5-bfd4a7d85c6a,#040042) 0%,var(--token-0d1c15e4-19d4-4f59-abec-7c72f6c1a824,#385fff) 100%)}"
+    },
+    {
+      "name": "Dashboard destination row",
+      "kind": "custom",
+      "description": "Full-width destination link with a subtle navy divider; action stacks below the copy on mobile.",
+      "html": "<a class=\"ds-destination\" href=\"/startups/\"><span><strong>Explore our startups</strong><span class=\"ds-description\">Meet the companies building what comes next.</span></span><span class=\"ds-action\">Explore startups <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></span></a>",
+      "css": ".ds-destination{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:28px 0;border-bottom:1px solid #33335d;background:var(--replica-navy,#000033);color:var(--replica-white,#eff8ff);text-decoration:none;font-family:Urbanist,Arial,sans-serif}.ds-destination strong{display:block;font-size:21px;font-weight:600;margin-bottom:8px}.ds-description{display:block;color:#c5c5de;font-size:16px;line-height:1.6;max-width:65ch}.ds-action{display:flex;align-items:center;gap:14px;color:#9ab6ff;white-space:nowrap;font-size:15px}.ds-destination:hover .ds-action{color:white}.ds-destination:focus-visible{outline:2px solid #81b7ff;outline-offset:5px}@media(max-width:809.98px){.ds-destination{align-items:flex-start;flex-direction:column;gap:20px}}"
     }
   ],
   "narrative": {
