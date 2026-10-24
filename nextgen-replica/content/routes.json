@@ -1,0 +1,134 @@
+[
+  {
+    "route": "/",
+    "key": "home",
+    "title": "NextGen Ventures - Backing Young Founders Before Anyone Else",
+    "source": "https://www.nextgenventures.com.au/"
+  },
+  {
+    "route": "/our-team",
+    "key": "our-team",
+    "title": "Our Team - NextGen Ventures",
+    "source": "https://www.nextgenventures.com.au/our-team"
+  },
+  {
+    "route": "/startups",
+    "key": "startups",
+    "title": "NextGen Ventures - Backing Young Founders Before Anyone Else",
+    "source": "https://www.nextgenventures.com.au/startups"
+  },
+  {
+    "route": "/career",
+    "key": "career",
+    "title": "NextGen Ventures - Backing Young Founders Before Anyone Else",
+    "source": "https://www.nextgenventures.com.au/career"
+  },
+  {
+    "route": "/startups/brumby",
+    "key": "startups--brumby",
+    "title": "Autonomous drones for cattle mustering - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/brumby"
+  },
+  {
+    "route": "/startups/lucent",
+    "key": "startups--lucent",
+    "title": "AI bug detection from session replays - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/lucent"
+  },
+  {
+    "route": "/startups/puralink",
+    "key": "startups--puralink",
+    "title": "Autonomous pipe inspection robots - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/puralink"
+  },
+  {
+    "route": "/startups/fluency",
+    "key": "startups--fluency",
+    "title": "Adaptive work intelligence platform - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/fluency"
+  },
+  {
+    "route": "/startups/kronus",
+    "key": "startups--kronus",
+    "title": "Development and execution platform for safety-critical compute - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/kronus"
+  },
+  {
+    "route": "/startups/dreamscale-labs",
+    "key": "startups--dreamscale-labs",
+    "title": "Fast cloud inference for robot AI models - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/dreamscale-labs"
+  },
+  {
+    "route": "/startups/fastlane",
+    "key": "startups--fastlane",
+    "title": "Create winning short-form content in seconds - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/fastlane"
+  },
+  {
+    "route": "/startups/forward",
+    "key": "startups--forward",
+    "title": "Unifying the global private credit market - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/forward"
+  },
+  {
+    "route": "/startups/metasorb",
+    "key": "startups--metasorb",
+    "title": "Ultradurable PFAS-free protective coating platforms - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/metasorb"
+  },
+  {
+    "route": "/startups/antaresaerospace",
+    "key": "startups--antaresaerospace",
+    "title": "Reusable small satellite launch - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/antaresaerospace"
+  },
+  {
+    "route": "/startups/fracta",
+    "key": "startups--fracta",
+    "title": "Unpacking a new marketplace - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/fracta"
+  },
+  {
+    "route": "/startups/chyral",
+    "key": "startups--chyral",
+    "title": "AI-powered optical sensors for real-time biochemistry - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/chyral"
+  },
+  {
+    "route": "/startups/source",
+    "key": "startups--source",
+    "title": "AI platform for enterprise operations software - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/source"
+  },
+  {
+    "route": "/startups/maple",
+    "key": "startups--maple",
+    "title": "Creating more in-person connection with technology - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/maple"
+  },
+  {
+    "route": "/startups/blunge",
+    "key": "startups--blunge",
+    "title": "End-to-end AI design agent for marketers - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/blunge"
+  },
+  {
+    "route": "/startups/den",
+    "key": "startups--den",
+    "title": "AI goods and services - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/den"
+  },
+  {
+    "route": "/career/investments-associate",
+    "key": "career--investments-associate",
+    "title": "NextGen Ventures - Backing Young Founders Before Anyone Else",
+    "source": "https://www.nextgenventures.com.au/career/investments-associate"
+  },
+  {
+    "route": "/startups/alythya",
+    "key": "startups--alythya",
+    "title": "Digital product passports - NextGen Ventures - Australia's First Student Focused VC Fund",
+    "source": "https://www.nextgenventures.com.au/startups/alythya"
+  }
+]

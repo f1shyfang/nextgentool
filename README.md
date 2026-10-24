@@ -2,6 +2,22 @@
 
 A pnpm monorepo starter with a Next.js App Router application and shared environment package.
 
+## NextGen Ventures replica
+
+The replicated NextGen Ventures website is in [`nextgen-replica/`](./nextgen-replica/README.md), with 22 responsive pages and local image/font assets.
+
+```sh
+cd nextgen-replica
+npm ci
+npm run dev
+```
+
+Its production static build is generated with `npm run build` in that directory.
+
+### Brand kit
+
+The [visual brand guidelines](output/pdf/NextGen-Ventures-Brand-Guidelines.pdf) and [asset bundle](output/pdf/NextGen-Ventures-Brand-Kit.zip) cover logo usage, colours, typography, photography, UI styling, and accessibility. [Generation instructions](brand-kit-source/README.md) are included.
+
 ## Requirements
 
 - Node.js 24.22.1
