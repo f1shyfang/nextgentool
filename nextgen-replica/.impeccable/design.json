@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T00:00:00Z",
+  "title": "Design System: NextGen Ventures replica",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "neutral", "displayName": "Page navy" },
+      "header-action": { "role": "primary", "displayName": "Header action blue" },
+      "source-action": { "role": "primary", "displayName": "Imported action blue" },
+      "source-accent": { "role": "primary", "displayName": "Source accent blue" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Space Grotesk display", "purpose": "Hero heading; tablet 32px, mobile 26px." },
+      "title": { "displayName": "Urbanist section title", "purpose": "Section headings; source responsive rules use 24px and 19px." },
+      "body": { "displayName": "Inter body", "purpose": "Imported paragraphs; 14px below desktop." }
+    },
+    "motion": [
+      { "name": "navigation-state", "value": "color .18s ease, background-color .18s ease", "purpose": "Header link and action hover transitions." },
+      { "name": "gallery-forward", "value": "50s linear infinite", "purpose": "First strip translates from 0 to calc(-50% - 5px); hover pauses and reduced motion disables animation." },
+      { "name": "gallery-reverse", "value": "58s linear infinite reverse", "purpose": "Opposing second strip with the same pause and reduced-motion behavior." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-max", "value": "809.98px" },
+      { "name": "tablet-min", "value": "810px" },
+      { "name": "tablet-and-collapsed-header-max", "value": "1099.98px" },
+      { "name": "desktop-min", "value": "1100px" }
+    ],
+    "focus": { "outline": "2px solid #81b7ff", "outlineOffset": "5px" },
+    "provenance": {
+      "authority": "https://www.nextgenventures.com.au/",
+      "mode": "scan",
+      "sources": ["app/globals.css", "public/styles/home.css", "content/home.html", "components/Header.jsx", "components/ReferencePage.jsx"],
+      "note": "Documented existing source values. No synthesized tonal ramps or replacement identity. Primitive tokens live exclusively in DESIGN.md frontmatter."
+    }
+  },
+  "components": [
+    {
+      "name": "Header founder action",
+      "kind": "button",
+      "refersTo": "header-action",
+      "description": "Compact Urbanist action in the sticky navigation.",
+      "html": "<a class=\"ds-header-action\" href=\"#founders\">Founders - Get in touch</a>",
+      "css": ".ds-header-action{display:inline-flex;padding:17px 20px;background:var(--replica-blue,#2454ff);color:var(--replica-white,#eff8ff);border-radius:6px;font:500 14px Urbanist,Arial,sans-serif;white-space:nowrap;text-decoration:none;transition:color .18s ease,background-color .18s ease}.ds-header-action:hover{background:#3866ff}.ds-header-action:focus-visible{outline:2px solid #81b7ff;outline-offset:5px}"
+    },
+    {
+      "name": "Source founder action",
+      "kind": "button",
+      "refersTo": "founder-action",
+      "description": "Original blue enquiry action with Space Grotesk label.",
+      "html": "<a class=\"ds-founder-action\" href=\"#founders\">Founders – Get in touch</a>",
+      "css": ".ds-founder-action{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:15px 20px;background:var(--token-f40f9fda-6a11-4bd5-8b25-9d26ad54ab9e,#0059ff);color:#fff;border-radius:6px;font:500 14px 'Space Grotesk',sans-serif;letter-spacing:-.02em;text-decoration:none;box-shadow:none}.ds-founder-action:focus-visible{outline:2px solid #81b7ff;outline-offset:5px}"
+    },
+    {
+      "name": "Investor enquiry action",
+      "kind": "button",
+      "refersTo": "investor-action",
+      "description": "Dark source action paired with founder enquiry.",
+      "html": "<a class=\"ds-investor-action\" href=\"#investors\">LP Enquiry</a>",
+      "css": ".ds-investor-action{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:15px 20px;background:var(--token-2eee9871-7400-4b43-ab46-f4ca8cbcd5af,#141414);color:#fff;border-radius:6px;font:500 14px 'Space Grotesk',sans-serif;letter-spacing:-.02em;text-decoration:none;box-shadow:none}.ds-investor-action:focus-visible{outline:2px solid #81b7ff;outline-offset:5px}"
+    },
+    {
+      "name": "Desktop navigation links",
+      "kind": "nav",
+      "description": "Urbanist text links with the actual header hover and focus treatment.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><a href=\"#team\">Team</a><a href=\"#startups\">Startups</a><a href=\"#writing\">Our Writing</a><a href=\"#careers\">Careers</a></nav>",
+      "css": ".ds-nav{display:flex;gap:30px;padding:20px;background:var(--replica-navy,#000033)}.ds-nav a{color:var(--replica-white,#eff8ff);font:500 16px Urbanist,Arial,sans-serif;text-decoration:none;transition:color .18s ease}.ds-nav a:hover{color:#6b94ff}.ds-nav a:focus-visible{outline:2px solid #81b7ff;outline-offset:5px}"
+    },
+    {
+      "name": "Feature card surface",
+      "kind": "card",
+      "description": "Original homepage gradient shell; insert original illustration and copy, preserving their source layout.",
+      "html": "<div class=\"ds-feature-card\" aria-label=\"Feature card surface\"></div>",
+      "css": ".ds-feature-card{display:flex;flex-direction:column;justify-content:space-between;align-items:center;height:400px;padding:20px;border-radius:12px;overflow:clip;background:linear-gradient(180deg,var(--token-899bc5d2-841e-4e35-a0f5-bfd4a7d85c6a,#040042) 0%,var(--token-0d1c15e4-19d4-4f59-abec-7c72f6c1a824,#385fff) 100%)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The NextGen Ventures reference",
+    "overview": "The original site at https://www.nextgenventures.com.au/ is the binding visual authority. This document captures the implemented replica, rather than introducing a new identity. Preserve its dark navy field, bright blue actions, generous section spacing, photographs, original poppy imagery, and moving community gallery.",
+    "keyCharacteristics": [
+      "Deep navy surfaces with pale typography and vivid blue actions.",
+      "Geometric headlines, compact navigation, and generous space between sections.",
+      "Original photography and poppy imagery as the recognizable visual signatures."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the reference imagery, logo, font roles, and responsive composition.",
+      "Do retain the distinction between header blue and imported source action blue.",
+      "Do preserve keyboard focus and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't invent additional palettes, token scales, or component variants.",
+      "Don't replace original photographs or poppies with generated substitutes.",
+      "Don't flatten the gallery into a static grid or add decorative shadows to source actions."
+    ]
+  }
+}
