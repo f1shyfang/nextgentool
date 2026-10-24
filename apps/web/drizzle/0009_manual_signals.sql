@@ -1,0 +1,4 @@
+ALTER TABLE "intelligence_financing" DROP CONSTRAINT "intelligence_financing_valuation_kind";--> statement-breakpoint
+ALTER TABLE "intelligence_financing" ALTER COLUMN "title" SET DATA TYPE varchar(300);--> statement-breakpoint
+ALTER TABLE "intelligence_financing" ADD CONSTRAINT "intelligence_financing_round_type" CHECK ("intelligence_financing"."round_type" IN ('pre_seed', 'seed', 'series_a', 'series_b', 'series_c', 'growth', 'debt', 'grant', 'other'));--> statement-breakpoint
+ALTER TABLE "intelligence_financing" ADD CONSTRAINT "intelligence_financing_valuation_kind" CHECK (("intelligence_financing"."valuation" IS NULL AND "intelligence_financing"."valuation_kind" IS NULL) OR ("intelligence_financing"."valuation" IS NOT NULL AND "intelligence_financing"."valuation_kind" IS NOT NULL AND "intelligence_financing"."valuation_kind" IN ('pre_money', 'post_money')));

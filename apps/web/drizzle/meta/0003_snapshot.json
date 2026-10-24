@@ -1,0 +1,663 @@
+{
+  "id": "2439a781-7639-4d1f-b3d8-c8aa0c1fef52",
+  "prevId": "15db18a7-9b73-4ca2-881f-0c69102f5e3f",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.pipeline_deals": {
+      "name": "pipeline_deals",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "firm_id": {
+          "name": "firm_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(160)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "company_id": {
+          "name": "company_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "company_name": {
+          "name": "company_name",
+          "type": "varchar(160)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "company_href": {
+          "name": "company_href",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "stage": {
+          "name": "stage",
+          "type": "pipeline_stage",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "owner_id": {
+          "name": "owner_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "next_step": {
+          "name": "next_step",
+          "type": "varchar(500)",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "''"
+        },
+        "due_date": {
+          "name": "due_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "summary": {
+          "name": "summary",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "''"
+        },
+        "created_by": {
+          "name": "created_by",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "stage_entered_at": {
+          "name": "stage_entered_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "version": {
+          "name": "version",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        }
+      },
+      "indexes": {
+        "pipeline_deal_board": {
+          "name": "pipeline_deal_board",
+          "columns": [
+            {
+              "expression": "firm_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "stage",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "stage_entered_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "pipeline_deal_owner": {
+          "name": "pipeline_deal_owner",
+          "columns": [
+            {
+              "expression": "firm_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "owner_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "pipeline_deals_firm_id_pipeline_firms_id_fk": {
+          "name": "pipeline_deals_firm_id_pipeline_firms_id_fk",
+          "tableFrom": "pipeline_deals",
+          "tableTo": "pipeline_firms",
+          "columnsFrom": ["firm_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "pipeline_deals_firm_id_owner_id_pipeline_members_firm_id_id_fk": {
+          "name": "pipeline_deals_firm_id_owner_id_pipeline_members_firm_id_id_fk",
+          "tableFrom": "pipeline_deals",
+          "tableTo": "pipeline_members",
+          "columnsFrom": ["firm_id", "owner_id"],
+          "columnsTo": ["firm_id", "id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "pipeline_deals_firm_id_created_by_pipeline_members_firm_id_id_fk": {
+          "name": "pipeline_deals_firm_id_created_by_pipeline_members_firm_id_id_fk",
+          "tableFrom": "pipeline_deals",
+          "tableTo": "pipeline_members",
+          "columnsFrom": ["firm_id", "created_by"],
+          "columnsTo": ["firm_id", "id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "pipeline_deal_firm_id": {
+          "name": "pipeline_deal_firm_id",
+          "nullsNotDistinct": false,
+          "columns": ["firm_id", "id"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "pipeline_deal_version_positive": {
+          "name": "pipeline_deal_version_positive",
+          "value": "\"pipeline_deals\".\"version\" > 0"
+        },
+        "pipeline_deal_name_present": {
+          "name": "pipeline_deal_name_present",
+          "value": "length(trim(\"pipeline_deals\".\"name\")) > 0 AND length(trim(\"pipeline_deals\".\"company_name\")) > 0"
+        },
+        "pipeline_company_reference": {
+          "name": "pipeline_company_reference",
+          "value": "(\"pipeline_deals\".\"company_id\" IS NULL AND \"pipeline_deals\".\"company_href\" IS NULL) OR (\"pipeline_deals\".\"company_id\" IS NOT NULL AND \"pipeline_deals\".\"company_href\" IS NOT NULL)"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "public.pipeline_events": {
+      "name": "pipeline_events",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "firm_id": {
+          "name": "firm_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "deal_id": {
+          "name": "deal_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "actor_id": {
+          "name": "actor_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "occurred_at": {
+          "name": "occurred_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "varchar(16)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "from_stage": {
+          "name": "from_stage",
+          "type": "pipeline_stage",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "to_stage": {
+          "name": "to_stage",
+          "type": "pipeline_stage",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rationale": {
+          "name": "rationale",
+          "type": "varchar(2000)",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "''"
+        },
+        "changes": {
+          "name": "changes",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "pipeline_event_history": {
+          "name": "pipeline_event_history",
+          "columns": [
+            {
+              "expression": "firm_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "deal_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "occurred_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "pipeline_events_firm_id_deal_id_pipeline_deals_firm_id_id_fk": {
+          "name": "pipeline_events_firm_id_deal_id_pipeline_deals_firm_id_id_fk",
+          "tableFrom": "pipeline_events",
+          "tableTo": "pipeline_deals",
+          "columnsFrom": ["firm_id", "deal_id"],
+          "columnsTo": ["firm_id", "id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "pipeline_events_firm_id_actor_id_pipeline_members_firm_id_id_fk": {
+          "name": "pipeline_events_firm_id_actor_id_pipeline_members_firm_id_id_fk",
+          "tableFrom": "pipeline_events",
+          "tableTo": "pipeline_members",
+          "columnsFrom": ["firm_id", "actor_id"],
+          "columnsTo": ["firm_id", "id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "pipeline_event_kind": {
+          "name": "pipeline_event_kind",
+          "value": "\"pipeline_events\".\"kind\" IN ('created', 'updated', 'moved', 'closed', 'reopened')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "public.pipeline_firms": {
+      "name": "pipeline_firms",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(160)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.pipeline_members": {
+      "name": "pipeline_members",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "firm_id": {
+          "name": "firm_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "clerk_user_id": {
+          "name": "clerk_user_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(160)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "enabled": {
+          "name": "enabled",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "pipeline_members_firm_id_pipeline_firms_id_fk": {
+          "name": "pipeline_members_firm_id_pipeline_firms_id_fk",
+          "tableFrom": "pipeline_members",
+          "tableTo": "pipeline_firms",
+          "columnsFrom": ["firm_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "pipeline_members_clerk_user_id_unique": {
+          "name": "pipeline_members_clerk_user_id_unique",
+          "nullsNotDistinct": false,
+          "columns": ["clerk_user_id"]
+        },
+        "pipeline_member_firm_id": {
+          "name": "pipeline_member_firm_id",
+          "nullsNotDistinct": false,
+          "columns": ["firm_id", "id"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.pipeline_requests": {
+      "name": "pipeline_requests",
+      "schema": "",
+      "columns": {
+        "firm_id": {
+          "name": "firm_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "actor_id": {
+          "name": "actor_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "request_id": {
+          "name": "request_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fingerprint": {
+          "name": "fingerprint",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "result": {
+          "name": "result",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "pipeline_requests_firm_id_actor_id_pipeline_members_firm_id_id_fk": {
+          "name": "pipeline_requests_firm_id_actor_id_pipeline_members_firm_id_id_fk",
+          "tableFrom": "pipeline_requests",
+          "tableTo": "pipeline_members",
+          "columnsFrom": ["firm_id", "actor_id"],
+          "columnsTo": ["firm_id", "id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "pipeline_requests_firm_id_actor_id_request_id_pk": {
+          "name": "pipeline_requests_firm_id_actor_id_request_id_pk",
+          "columns": ["firm_id", "actor_id", "request_id"]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.research_firms": {
+      "name": "research_firms",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state": {
+          "name": "state",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'{\"companies\":[],\"deals\":[],\"documents\":[],\"records\":[],\"audit\":[]}'::jsonb"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.research_memberships": {
+      "name": "research_memberships",
+      "schema": "",
+      "columns": {
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "firm_id": {
+          "name": "firm_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "research_memberships_firm_id_research_firms_id_fk": {
+          "name": "research_memberships_firm_id_research_firms_id_fk",
+          "tableFrom": "research_memberships",
+          "tableTo": "research_firms",
+          "columnsFrom": ["firm_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "research_memberships_role_check": {
+          "name": "research_memberships_role_check",
+          "value": "\"research_memberships\".\"role\" IN ('viewer', 'contributor', 'admin')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "public.users": {
+      "name": "users",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(254)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "users_email_unique": {
+          "name": "users_email_unique",
+          "nullsNotDistinct": false,
+          "columns": ["email"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {
+    "public.pipeline_stage": {
+      "name": "pipeline_stage",
+      "schema": "public",
+      "values": [
+        "inbox",
+        "screening",
+        "evaluation",
+        "decision",
+        "passed",
+        "invested"
+      ]
+    }
+  },
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
