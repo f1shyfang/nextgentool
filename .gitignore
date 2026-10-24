@@ -9,3 +9,6 @@ dist/
 !.env.example
 .DS_Store
 .impeccable/review/
+tmp/
+output/pdf/NextGen-Ventures-Brand-Kit/
+.venv-brand/

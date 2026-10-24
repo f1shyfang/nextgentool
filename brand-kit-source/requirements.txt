@@ -1,0 +1,5 @@
+reportlab>=4.4.3,<6
+Pillow>=10,<14
+fonttools>=4.60,<5
+brotli>=1.1,<2
+svglib>=2.0,<3

@@ -14,6 +14,10 @@ npm run dev
 
 Its production static build is generated with `npm run build` in that directory.
 
+### Brand kit
+
+The [visual brand guidelines](output/pdf/NextGen-Ventures-Brand-Guidelines.pdf) and [asset bundle](output/pdf/NextGen-Ventures-Brand-Kit.zip) cover logo usage, colours, typography, photography, UI styling, and accessibility. [Generation instructions](brand-kit-source/README.md) are included.
+
 ## Requirements
 
 - Node.js 24.22.1
