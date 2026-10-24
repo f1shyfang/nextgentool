@@ -3,6 +3,41 @@ import { describe, expect, it } from "vitest";
 import { loadServerEnv } from "./server-env";
 
 describe("loadServerEnv", () => {
+  it("loads private research storage and scanner defaults or explicit settings", () => {
+    const database = {
+      DATABASE_URL: "postgres://user:pass@localhost:5432/app",
+    };
+    expect(loadServerEnv(database)).toMatchObject({
+      RESEARCH_STORAGE_PATH: ".research-private",
+      CLAMAV_HOST: "127.0.0.1",
+      CLAMAV_PORT: 3310,
+    });
+    expect(
+      loadServerEnv({
+        ...database,
+        RESEARCH_STORAGE_PATH: "/private/research",
+        CLAMAV_HOST: "scanner.internal",
+        CLAMAV_PORT: "3311",
+      }),
+    ).toMatchObject({
+      RESEARCH_STORAGE_PATH: "/private/research",
+      CLAMAV_HOST: "scanner.internal",
+      CLAMAV_PORT: 3311,
+    });
+  });
+
+  it.each(["0", "65536", "invalid"])(
+    "rejects invalid scanner port %s",
+    (port) => {
+      expect(() =>
+        loadServerEnv({
+          DATABASE_URL: "postgres://user:pass@localhost:5432/app",
+          CLAMAV_PORT: port,
+        }),
+      ).toThrow();
+    },
+  );
+
   it("rejects a missing DATABASE_URL", () => {
     expect(() => loadServerEnv({})).toThrow();
   });

@@ -64,3 +64,7 @@ pnpm --filter @repo/web verify:app http://localhost:3000
 ```
 
 See [application structure and authentication](apps/web/README.md) and the [consolidation record](docs/plans/app-consolidation.md).
+
+## Research & Diligence
+
+The authenticated `/research/` workspace supports private PDF/DOCX uploads, research notes, memo drafts, and pinned evidence revisions. Configure firm membership, persistent private storage, and ClamAV before use. See [operations](docs/plans/research-and-diligence-operations.md) and the [end-to-end verification report](docs/plans/research-and-diligence-local-verification.md).

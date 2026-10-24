@@ -16,7 +16,9 @@
     "verify:app": "node scripts/verify-app.mjs",
     "pipeline:member": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/provision-pipeline-member.ts",
     "research:admin": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/research-admin.ts",
-    "test:company:e2e": "playwright test --config playwright.company.config.ts"
+    "test:company:e2e": "playwright test --config playwright.company.config.ts",
+    "test:research:e2e": "playwright test --config playwright.research.config.ts",
+    "research:reconcile-storage": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/reconcile-research-storage.ts"
   },
   "dependencies": {
     "@repo/env": "workspace:*",
@@ -28,7 +30,8 @@
     "react-dom": "19.2.3",
     "zod": "^4.1.12",
     "@clerk/nextjs": "7.9.20",
-    "html-react-parser": "5.2.7"
+    "html-react-parser": "5.2.7",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
@@ -40,6 +43,7 @@
     "cheerio": "1.1.2",
     "tsx": "^4.23.15",
     "esbuild": "^0.28.2",
-    "@playwright/test": "^1.64.1"
+    "@playwright/test": "^1.64.1",
+    "fflate": "^0.8.3"
   }
 }
