@@ -15,4 +15,4 @@ python3 -m venv .venv-brand
 .venv-brand/bin/python brand-kit-source/build_brand_guide.py
 ```
 
-The generator uses the existing website assets and local fonts in `nextgen-replica/public/assets/`. Temporary font conversions and visual QA renders belong in `tmp/pdfs/`, which is ignored. The extracted kit folder is generated alongside the PDF and ZIP and is also ignored to avoid committing duplicate artifacts.
+The generator uses the existing website assets and local fonts in `apps/web/public/assets/`. Temporary font conversions and visual QA renders belong in `tmp/pdfs/`, which is ignored. The extracted kit folder is generated alongside the PDF and ZIP and is also ignored to avoid committing duplicate artifacts.

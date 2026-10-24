@@ -1,0 +1,13 @@
+{
+  "detector": {
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "space grotesk",
+        "files": ["apps/web/src/app/(site)/site.css"],
+        "createdAt": "2026-10-24T11:54:52.955Z",
+        "reason": "Repository apps/web/DESIGN.md explicitly assigns Space Grotesk to the NextGen display roles and requires preserving the reference font roles; apps/web/SITE-PRODUCT.md makes the reference typography binding. Both occurrences intentionally preserve that design."
+      }
+    ]
+  }
+}

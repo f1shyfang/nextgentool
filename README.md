@@ -1,18 +1,12 @@
-# Next.js + PostgreSQL workspace
+# NextGen Ventures workspace
 
-A pnpm monorepo starter with a Next.js App Router application and shared environment package.
+A pnpm workspace containing the NextGen website, authenticated investment tools, and shared environment configuration.
 
-## NextGen Ventures replica
+## NextGen Ventures application
 
-The replicated NextGen Ventures website is in [`nextgen-replica/`](./nextgen-replica/README.md), with 22 responsive pages and local image/font assets.
+[`apps/web`](apps/web/README.md) is the single NextGen application. It includes the 22-page public website, Clerk sign-in and sign-up, the protected `/dashboard/`. Investment tools under development will extend this app. The standalone replica has been consolidated into this workspace app.
 
-```sh
-cd nextgen-replica
-npm ci
-npm run dev
-```
-
-Its production static build is generated with `npm run build` in that directory.
+Run `pnpm dev` from the repository root. Production runs as a Next.js server; static export cannot serve authenticated routes.
 
 ### Brand kit
 
@@ -32,6 +26,8 @@ cp apps/web/.env.example apps/web/.env
 ```
 
 Set `DATABASE_URL` in `.env` to a PostgreSQL connection string. The application build uses this variable when validating its environment. A local example is included in `apps/web/.env.example`; remote databases must include `sslmode=verify-full`.
+
+Set `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` in the ignored `apps/web/.env.local` to enable authentication. Use the existing NextGen Clerk application. Keep secrets out of version control.
 
 ## Run locally
 
@@ -58,3 +54,13 @@ pnpm typecheck
 pnpm test
 pnpm build
 ```
+
+## Production and route verification
+
+```sh
+pnpm build
+pnpm --filter @repo/web start
+pnpm --filter @repo/web verify:app http://localhost:3000
+```
+
+See [application structure and authentication](apps/web/README.md) and the [consolidation record](docs/plans/app-consolidation.md).
