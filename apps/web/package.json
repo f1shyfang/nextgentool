@@ -13,7 +13,10 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "start": "next start",
-    "verify:app": "node scripts/verify-app.mjs"
+    "verify:app": "node scripts/verify-app.mjs",
+    "pipeline:member": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/provision-pipeline-member.ts",
+    "research:admin": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/research-admin.ts",
+    "test:company:e2e": "playwright test --config playwright.company.config.ts"
   },
   "dependencies": {
     "@repo/env": "workspace:*",
@@ -34,6 +37,9 @@
     "drizzle-kit": "^0.31.5",
     "typescript": "^5.9.3",
     "vitest": "^4.0.4",
-    "cheerio": "1.1.2"
+    "cheerio": "1.1.2",
+    "tsx": "^4.23.15",
+    "esbuild": "^0.28.2",
+    "@playwright/test": "^1.64.1"
   }
 }

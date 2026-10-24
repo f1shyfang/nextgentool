@@ -7,6 +7,19 @@ export const metadata = { title: "Dashboard | NextGen Ventures" };
 
 const destinations = [
   {
+    title: "Company Intelligence",
+    description:
+      "Research company profiles and inspect the evidence behind each fact.",
+    href: "/companies/",
+    action: "Open company research",
+  },
+  {
+    title: "Deal Pipeline",
+    description: "Follow investment opportunities from first look to decision.",
+    href: "/pipeline",
+    action: "Open pipeline",
+  },
+  {
     title: "Explore our startups",
     description: "Meet the companies building what comes next.",
     href: "/startups/",

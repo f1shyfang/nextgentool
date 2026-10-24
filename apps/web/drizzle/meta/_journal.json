@@ -15,6 +15,48 @@
       "when": 1792728197937,
       "tag": "0001_sudden_salo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792800000000,
+      "tag": "0002_research",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792840118938,
+      "tag": "0003_deal_pipeline",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792840378026,
+      "tag": "0005_glamorous_black_queen",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792843033762,
+      "tag": "0007_manual_signals",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792843064916,
+      "tag": "0008_pipeline_company_connection",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792843118909,
+      "tag": "0009_manual_signals",
+      "breakpoints": true
     }
   ]
 }

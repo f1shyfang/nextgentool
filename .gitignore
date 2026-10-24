@@ -13,3 +13,6 @@ tmp/
 output/pdf/NextGen-Ventures-Brand-Kit/
 .venv-brand/
 **/.impeccable/review/
+
+playwright-report/
+test-results/

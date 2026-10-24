@@ -10,6 +10,8 @@ function usesVerifiedRemoteTls(databaseUrl: string) {
 }
 
 export const serverEnvSchema = {
+  CLERK_SECRET_KEY: z.string().optional(),
+  TEST_DATABASE_URL: z.url({ protocol: /^postgres(?:ql)?$/ }).optional(),
   DATABASE_URL: z
     .url({ protocol: /^postgres(?:ql)?$/ })
     .refine(usesVerifiedRemoteTls, {
